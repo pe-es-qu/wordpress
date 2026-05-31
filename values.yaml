@@ -1,0 +1,32 @@
+# wordpress/values.yaml
+
+# Główna konfiguracja WordPressa
+wordpressUsername: admin666
+wordpressPassword: "dd66ee55aa44rr66"
+wordpressEmail: admin@twojadomena.pl
+wordpressFirstName: Hans
+wordpressLastName: Liebenase
+wordpressBlogName: "polnisze poezja aufs dojcz"
+
+# Konfiguracja bazy danych MariaDB (wdrażanej automatycznie wraz z chartem)
+mariadb:
+  auth:
+    rootPassword: "d6e5a4r6"
+    database: bitnami_wordpress
+    username: bn_wordpress
+    password: "d6e5a4r6666"
+  primary:
+    persistence:
+      enabled: true
+      size: 8Gi # Rozmiar dysku dla bazy danych
+
+# Wolumen dla plików WordPressa (wp-content itp.)
+persistence:
+  enabled: true
+  size: 10Gi
+
+# Konfiguracja dostępu (Serwis)
+service:
+  type: LoadBalancer
+  ports:
+    http: 80
